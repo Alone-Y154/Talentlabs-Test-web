@@ -12,7 +12,6 @@ const Courses = () => {
   useEffect(() => {
     // Retrieve the token from local storage
     const storedToken = localStorage.getItem('token');
-    console.log("Stored Token:", storedToken);
 
     // Redirect immediately if no token is found
     if (!storedToken) {
@@ -28,7 +27,7 @@ const Courses = () => {
             Authorization: `${storedToken}`, // Ensure proper format with Bearer prefix
           },
         });
-        console.log("API Response:", response.data); // Logging API response
+         // Logging API response
         setCourses(response.data);
       } catch (error) {
         console.error("API Error:", error); // Logging error details
